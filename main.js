@@ -1,4 +1,4 @@
-//(this) to na czym robiona jest cała akcja. W tym przypadku na document
+
 $(document).on('scroll', function () {
  const windowHeight = $(window).height(); //pobieram 100vh czyli jedną wysokość okna przeglądarki
  const scrollValue = $(this).scrollTop();
