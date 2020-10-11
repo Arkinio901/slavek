@@ -279,6 +279,14 @@ footer {
   transition: 2s linear;
  }
 
+ .arrow {
+  display: none;
+  cursor: pointer;
+ }
+
+ .show {
+  display: block;
+ }
 
 
  /* .arrow {
@@ -337,7 +345,7 @@ footer {
  .arrow {
   right: 180px;
   font-size: 30px;
-  cursor: pointer;
+
  }
 
 }
