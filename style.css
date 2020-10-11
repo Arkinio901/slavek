@@ -3,6 +3,13 @@
  padding: 0;
  box-sizing: border-box;
  font-family: 'Piazzolla', serif;
+
+}
+
+body {
+ max-width: 1600px;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 header {
@@ -122,6 +129,17 @@ footer {
  text-align: center;
 }
 
+.arrow {
+ display: block;
+ position: fixed;
+ right: 10px;
+ bottom: 20px;
+ color: red;
+ font-size: 30px;
+ transition: 2s linear;
+ transform: scale(1);
+}
+
 @media (orientation: portrait) and (min-width: 768px) {
  .text h1 {
   font-size: 50px;
@@ -196,6 +214,10 @@ footer {
   font-size: 30px;
  }
 
+ main {
+  overflow-x: hidden;
+ }
+
  main h1 {
   font-size: 50px;
  }
@@ -236,6 +258,41 @@ footer {
   font-size: 20px;
  }
 
+ .art1 {
+  transform: translateX(100vw);
+ }
+
+ .art2 {
+  transform: translateX(-100vw);
+ }
+
+ .art3 {
+  transform: translateX(100vw);
+ }
+
+ .art4 {
+  transform: translateX(-100vw);
+ }
+
+ .active {
+  transform: translateX(0vw);
+  transition: 2s linear;
+ }
+
+
+
+ /* .arrow {
+  display: block;
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  color: red;
+  font-size: 40px;
+  transition: 2s linear;
+  transform: scale(1);
+ } */
+
+
 }
 
 @media (orientation: landscape) and (min-width: 1600px) {
@@ -269,8 +326,18 @@ footer {
   font-size: 40px;
  }
 
+ .arrow {
+  right: 60px;
+ }
+
  footer {
   font-size: 30px;
+ }
+
+ .arrow {
+  right: 180px;
+  font-size: 30px;
+  cursor: pointer;
  }
 
 }
