@@ -145,6 +145,11 @@ footer {
  transform: scale(1);
 }
 
+a {
+ text-decoration: none;
+ color: white;
+}
+
 @media (orientation: portrait) and (min-width: 768px) {
  .text h1 {
   font-size: 50px;
