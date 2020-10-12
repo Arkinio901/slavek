@@ -1,40 +1,41 @@
 
-$(document).on('scroll', function () {
- const windowHeight = $(window).height(); //pobieram 100vh czyli jedną wysokość okna przeglądarki
- const scrollValue = $(this).scrollTop();
- // console.log(scrolollValue)
-
-
+document.addEventListener('scroll', function () {
+ const scrollValue = window.scrollY; 
+ const windowHeight = window.innerHeight;
+ 
      //PIERWSZA SEKCJA
 
-
- const $art1 = $('.art1');
- const art1FromTop = $art1.offset().top;//Jak daleko jest nasz element od początku strony
- const art1Height = $art1.outerHeight();//wielkość naszego elementu
- // console.log(art2Height);
-
- const $art2 = $('.art2');
- const art2FromTop = $art2.offset().top;
- const art2Height = $art2.outerHeight();
-
- const $art3 = $('.art3');
- const art3FromTop = $art3.offset().top;
- const art3Height = $art3.outerHeight();
+ const sec1 = document.querySelector('.sec1');
+ const sec1FromTop = sec1.offsetTop;
+ const sec1Height = sec1.offsetHeight;
  
- const $art4 = $('.art4');
- const art4FromTop = $art4.offset().top;
- const art4Height = $art4.outerHeight();
- const $arrow = $('.arrow');
+
+ const sec2 = document.querySelector('.sec2');
+ const sec2FromTop = sec2.offsetTop;
+ const sec2Height = sec2.offsetHeight;
+ 
+
+ const sec3 = document.querySelector('.sec3');
+ const sec3FromTop = sec3.offsetTop;
+ const sec3Height = sec3.offsetHeight;
+ 
+ 
+ const sec4 = document.querySelector('.sec4');
+ const sec4FromTop = sec4.offsetTop;
+ const sec4Height = sec4.offsetHeight;
+ 
+ const arrow = document.querySelector('.arrow');
+
+const sec = document.querySelectorAll('section');
+const secAll= [... sec];
+secAll.forEach(one=>{
 
 
-
- if (scrollValue > art1FromTop + art1Height - windowHeight){
-     $art1.addClass('active');
-     $art2.addClass('active');
-     $art3.addClass('active');
-     $art4.addClass('active');
-     $arrow.addClass('show');
+ if (scrollValue > sec1FromTop + sec1Height - windowHeight){
+     one.classList.add('active');
+     arrow.classList.add('show');
  }
+})
 // 
 
 
@@ -42,13 +43,17 @@ $(document).on('scroll', function () {
         
 
  // zabieram klasę active
+ secAll.forEach(one =>{
+
+ 
  if (scrollValue < 100){
-    $('article').removeClass('active');
-    $arrow.removeClass('show');
+    one.classList.remove('active');
+    arrow.classList.remove('show');
 }
+})
 
 })
 
-$('.arrow').on('click', function(){
-    $('html, body').animate({scrollTop:0}, '300')
+document.querySelector('.arrow').addEventListener('click', ()=>{
+    window.scrollTo(0,0);
 })
